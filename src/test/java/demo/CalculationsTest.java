@@ -45,6 +45,7 @@ public class CalculationsTest {
         assertEquals(10, Calculations.sumOfDigits(1234));
         assertEquals(0, Calculations.sumOfDigits(0));
         assertEquals(9, Calculations.sumOfDigits(9));
+        assertEquals(10, Calculations.sumOfDigits(-1234));
     }
 
     @Test
@@ -63,6 +64,7 @@ public class CalculationsTest {
         assertTrue(isDivideOn(15, 5));
         assertFalse(isDivideOn(17, 4));
         assertTrue(isDivideOn(0, 1));
+        assertFalse(isDivideOn(4, 0));
     }
 
 }

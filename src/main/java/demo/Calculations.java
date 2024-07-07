@@ -22,6 +22,7 @@ public class Calculations {
 
     public static int sumOfDigits(int number) {
         int res = 0;
+        number = Math.abs(number);
         while (number != 0) {
             res += number % 10;
             number /= 10;
@@ -43,6 +44,9 @@ public class Calculations {
     }
 
     public static boolean isDivideOn(int number, int dividor) {
+        if (dividor == 0){
+            return false;
+        }
         return number % dividor == 0;
     }
 
