@@ -4,10 +4,12 @@ package demo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 import static demo.Calculations.divide;
+import static demo.Calculations.divide1;
 import static demo.Calculations.isDivideOn;
 import static demo.Calculations.maxDigit;
 import static demo.Calculations.multiply;
@@ -29,10 +31,20 @@ public class CalculationsTest {
     }
 
     @Test
-    void divTest(){
+    void divide1Test(){
+        assertEquals(4, divide1(12, 3));
+        assertNotEquals(4, divide1(-2, 2));
+        assertEquals(0, divide1(10, 0));
+    }
+
+    @Test
+    void divideTest(){
         assertEquals(4, divide(12, 3));
         assertNotEquals(4, divide(-2, 2));
+        //assertEquals(0, divide(10, 0));
+        assertThrowsExactly(ArithmeticException.class, () -> divide(10, 0));
     }
+
 
     @Test
     void multiplyTest(){

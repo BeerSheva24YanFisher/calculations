@@ -12,8 +12,18 @@ public class Calculations {
         return res;
     }
 
-    public static int divide(int op1, int op2){
-        return op1/op2;
+    public static int divide1(int op1, int op2){
+        int res = 0;
+        try {
+            res = op1 / op2;
+        } catch (ArithmeticException e) {
+            System.out.println("Error. division by 0");
+        }
+        return res;
+    }
+
+    public static int divide(int op1, int op2) {
+        return op1 / op2;
     }
 
     public static int multiply(int op1, int op2){
@@ -44,12 +54,7 @@ public class Calculations {
     }
 
     public static boolean isDivideOn(int number, int dividor) {
-        if (dividor == 0){
-            return false;
-        }
-        return number % dividor == 0;
+        return dividor != 0 && number % dividor == 0;
     }
-
-    
 
 }
